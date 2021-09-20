@@ -1,10 +1,35 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>detail-course</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-title>Detail course</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <p class="ion-margin"><strong>Details of this course :</strong></p>
+        <ion-img style="width: 200px; height: 200px; margin-left:20%" [src]="selectedCourse.image"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <h1 class="ion-text-center"><strong>{{ selectedCourse.title }} By {{ selectedCourse.author }} </strong></h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <h3>Content of this course : </h3>
+        <ion-list>
+          <ion-item *ngFor="let keyword of selectedCourse.keywords">
+            {{ keyword }}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 
 </ion-content>
