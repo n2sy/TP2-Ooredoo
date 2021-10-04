@@ -40,4 +40,14 @@ export class ListCoursesService {
   getCourseById(id) {
     return this.tabCourses.find((c) => c.id == id);
   }
+
+  deleteThisCourse(c) {
+    let i = this.tabCourses.indexOf(c);
+    this.tabCourses.splice(i, 1);
+  }
+
+  addCourse(newC) {
+    newC.id = this.tabCourses[this.tabCourses.length - 1].id + 1;
+    this.tabCourses.push(newC);
+  }
 }

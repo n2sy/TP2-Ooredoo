@@ -1,9 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>add-course</ion-title>
+    <ion-title>Add a course</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
+  <form #f="ngForm" (ngSubmit)="createNewCourse(f.value)">
+    <ion-item>
+      <ion-label position="floating">Intitulé</ion-label>
+      <ion-input ngModel name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Author</ion-label>
+      <ion-input ngModel name="author"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Image</ion-label>
+      <ion-input ngModel name="image"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Keywords</ion-label>
+      <ion-input ngModel name="keywords"></ion-input>
+    </ion-item>
+    <p class="ion-margin">Keywords must be separated by commas</p>
+    <ion-button expand="block" color="primary" type="submit">
+      Add
+    </ion-button>
+
+  </form>
+
+
 
 </ion-content>
